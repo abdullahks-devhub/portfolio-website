@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="images/original_headshot.png" alt="Abdullah Khan" width="120" style="border-radius: 50%;">
   <h1>Abdullah Khan — AI/ML Engineer</h1>
   <p>Building production-grade machine learning systems. From data pipelines to deployed APIs.</p>
 
