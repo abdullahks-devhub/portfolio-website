@@ -1,30 +1,48 @@
-# Abdullah Khan — Portfolio Website
+<div align="center">
+  <img src="images/original_headshot.png" alt="Abdullah Khan" width="120" style="border-radius: 50%;">
+  <h1>Abdullah Khan — AI/ML Engineer</h1>
+  <p>Building production-grade machine learning systems. From data pipelines to deployed APIs.</p>
 
-Personal portfolio for Abdullah Khan, AI/ML Engineer.
+  <a href="https://www.abdullahks.me">
+    <img src="https://img.shields.io/badge/Live_Portfolio-abdullahks.me-6c63ff?style=for-the-badge&logoColor=white" alt="Live Website">
+  </a>
+</div>
 
-**Live at:** [abdullahkhan.dev](https://abdullahkhan.dev) *(or your custom domain)*
+<br />
 
-## Stack
+## 🚀 About This Repository
 
-- Pure HTML, CSS, and vanilla JavaScript — zero dependencies, zero build step
-- Deployed via [Vercel](https://vercel.com)
+This repository contains the source code for my personal portfolio website. Designed from scratch to be highly performant, it features an ultra-modern dark theme, glassmorphic UI elements, and a completely custom CSS and vanilla JavaScript architecture — **zero heavy frameworks, zero bloat.**
 
-## Local Development
+It elegantly showcases my:
+- **MLOps Pipelines & Systems** 
+- **Generative AI & RAG Capabilities**
+- **Data Science and Engineering Skills**
+- **DeepLearning.AI & IBM Specializations**
 
-Just open `index.html` in your browser, or use a simple local server:
+## 🛠 Tech Stack
+
+- **HTML5** (Semantic structure)
+- **CSS3** (Custom properties, grid, flexbox, animations, glassmorphism)
+- **Vanilla JavaScript** (Intersection Observers, custom cursor, dynamic interactions)
+- **Vercel** (Global edge deployment)
+
+## 💻 Local Development
+
+Want to test it locally? It takes 5 seconds:
 
 ```bash
+# Clone the repository
+git clone https://github.com/abdullahks-devhub/portfolio-website.git
+cd portfolio-website
+
+# Run a local server
 npx serve .
 ```
+Then open `http://localhost:3000` in your browser.
 
-## Deploying to Vercel
+## 🔗 Connect With Me
 
-1. Push this repo to GitHub
-2. Import the repo at [vercel.com/new](https://vercel.com/new)
-3. Vercel auto-detects it as a static site — click **Deploy**
-4. Add your custom domain in **Settings → Domains**
-
-## Custom Domain (GitHub Student Pack)
-
-This site uses a `.tech` / `.me` / `.co` domain claimed via the GitHub Student Developer Pack.
-See [education.github.com/pack](https://education.github.com/pack) for available domain offers.
+- **LinkedIn:** [linkedin.com/in/abdullahks-devhub](https://linkedin.com/in/abdullahks-devhub)
+- **HuggingFace:** [huggingface.co/spaces/AbdullahKS-Devhub](https://huggingface.co/spaces/AbdullahKS-Devhub)
+- **Email:** abdullahkhansherwani09@gmail.com
