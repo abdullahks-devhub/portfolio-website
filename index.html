@@ -246,8 +246,7 @@
     }
 
     .hero-name .line2 {
-      color: transparent;
-      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+      color: var(--accent);
     }
 
     .hero-title {
@@ -1084,6 +1083,12 @@
 
       .hero {
         padding: 100px 24px 80px;
+      }
+
+      /* Fix invisible "Khan" text on mobile — stroke effect not supported */
+      .hero-name .line2 {
+        color: rgba(255, 255, 255, 0.5);
+        -webkit-text-stroke: 0;
       }
 
       .hero-stats {
