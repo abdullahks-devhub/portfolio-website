@@ -165,7 +165,7 @@
       align-items: center;
       padding: 120px 60px 80px;
       position: relative;
-      overflow: hidden;
+      overflow-x: hidden; /* Only prevent horizontal overflow */
     }
 
     .hero-grid {
@@ -1292,7 +1292,13 @@
       }
 
       .hero {
-        padding: 86px 20px 60px;
+        padding: 70px 20px 40px;
+        min-height: auto; /* Let it grow if content is tall */
+      }
+
+      .hero-name {
+        font-size: clamp(2.5rem, 12vw, 3.5rem);
+        line-height: 1.1;
       }
 
       .hero-badge {
