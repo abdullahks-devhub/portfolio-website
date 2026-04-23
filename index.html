@@ -583,10 +583,68 @@
       gap: 24px;
     }
 
-    @media (min-width: 900px) {
+    @media (min-width: 1200px) {
       .github-focus-grid {
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 2fr 1fr 1fr;
       }
+    }
+
+    @media (min-width: 900px) and (max-width: 1199px) {
+      .github-focus-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* Back to Top */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 44px;
+      height: 44px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      z-index: 99;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-5px);
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--accent);
+      color: var(--white);
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      z-index: 1000;
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
     }
 
     .projects-grid {
@@ -1611,6 +1669,12 @@
                 alt="GitHub Graph" style="width: 100%; height: auto; object-fit: contain; filter: brightness(1.2);" />
             </div>
             <div
+              style="background: rgba(19, 19, 31, 0.5); border: 1px solid var(--border); border-radius: 12px; padding: 16px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <img
+                src="https://github-readme-stats.vercel.app/api/top-langs/?username=abdullahks-devhub&layout=compact&bg_color=0f0f1a00&text_color=6b6b8a&title_color=6c63ff&hide_border=true"
+                alt="Top Languages" style="width: 100%; height: auto; object-fit: contain;" />
+            </div>
+            <div
               style="background: rgba(19, 19, 31, 0.5); border: 1px solid var(--border); border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: center;">
               <h4 style="color: var(--white); font-family: 'Syne', sans-serif; font-size: 1.1rem; margin-bottom: 12px;">
                 Currently Exploring</h4>
@@ -1968,12 +2032,47 @@
     </div>
   </section>
 
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </a>
+
+  <div class="toast" id="toast">Email Copied! 🚀</div>
+
   <!-- FOOTER -->
   <footer style="justify-content: center; text-align: center;">
     <p>© 2026 Abdullah Khan</p>
   </footer>
 
   <script>
+    // ── Toast & Clipboard ──
+    const toast = document.getElementById('toast');
+    function copyEmailToClipboard() {
+      const email = 'abdullahkhansherwani09@gmail.com';
+      navigator.clipboard.writeText(email).then(() => {
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2500);
+      });
+    }
+
+    // Attach to email links
+    document.querySelectorAll('a[href^="mailto"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        copyEmailToClipboard();
+      });
+    });
+
+    // ── Back to Top ──
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
     // ── Hamburger / Mobile Nav ──
     const hamburger = document.getElementById('hamburger');
     const mobileNav = document.getElementById('mobileNav');
