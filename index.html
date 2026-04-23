@@ -580,18 +580,22 @@
     .github-focus-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 24px;
+      gap: 20px;
     }
 
-    @media (min-width: 1200px) {
+    @media (min-width: 768px) {
       .github-focus-grid {
-        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+      }
+      /* Graph spans full width on desktop/tablet for a cleaner look */
+      .github-focus-grid > div:first-child {
+        grid-column: span 2;
       }
     }
 
-    @media (min-width: 900px) and (max-width: 1199px) {
+    @media (max-width: 480px) {
       .github-focus-grid {
-        grid-template-columns: 1fr 1fr;
+        gap: 16px;
       }
     }
 
