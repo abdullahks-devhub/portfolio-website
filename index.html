@@ -583,16 +583,6 @@
       gap: 20px;
     }
 
-    @media (min-width: 768px) {
-      .github-focus-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-      /* Graph spans full width on desktop/tablet for a cleaner look */
-      .github-focus-grid > div:first-child {
-        grid-column: span 2;
-      }
-    }
-
     @media (max-width: 480px) {
       .github-focus-grid {
         gap: 16px;
@@ -1672,25 +1662,6 @@
                 src="https://github-readme-activity-graph.vercel.app/graph?username=abdullahks-devhub&bg_color=0f0f1a00&color=6c63ff&line=43e8d8&point=ff6584&area=true&hide_border=true&hide_title=true"
                 alt="GitHub Graph" style="width: 100%; height: auto; object-fit: contain; filter: brightness(1.2);" />
             </div>
-            <div
-              style="background: rgba(19, 19, 31, 0.5); border: 1px solid var(--border); border-radius: 12px; padding: 16px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
-              <img
-                src="https://github-readme-stats.vercel.app/api/top-langs/?username=abdullahks-devhub&layout=compact&bg_color=0f0f1a00&text_color=6b6b8a&title_color=6c63ff&hide_border=true"
-                alt="Top Languages" style="width: 100%; height: auto; object-fit: contain;" />
-            </div>
-            <div
-              style="background: rgba(19, 19, 31, 0.5); border: 1px solid var(--border); border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: center;">
-              <h4 style="color: var(--white); font-family: 'Syne', sans-serif; font-size: 1.1rem; margin-bottom: 12px;">
-                Currently Exploring</h4>
-              <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
-                <li style="font-size: 0.8rem; color: var(--muted); display: flex; gap: 8px;"><span
-                    style="color: var(--accent3);">→</span> Building Agentic Workflows</li>
-                <li style="font-size: 0.8rem; color: var(--muted); display: flex; gap: 8px;"><span
-                    style="color: var(--accent3);">→</span> Advanced RAG with Vector DBs</li>
-                <li style="font-size: 0.8rem; color: var(--muted); display: flex; gap: 8px;"><span
-                    style="color: var(--accent3);">→</span> MLOps & Local LLM Deployments</li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>
@@ -1713,9 +1684,25 @@
         </div>
         <div class="info-card">
           <div class="info-card-icon">⚡</div>
-          <div class="info-card-title">Currently</div>
+          <div class="info-card-title">Active Project</div>
           <div class="info-card-text">Building an MLOps pipeline for Diamond Price Prediction with FastAPI, MLflow &
             Gradio</div>
+        </div>
+        
+        <div class="info-card" style="padding: 16px;">
+          <div class="info-card-title" style="margin-bottom: 12px; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent);">Top Languages</div>
+          <img
+            src="https://github-readme-stats.vercel.app/api/top-langs/?username=abdullahks-devhub&layout=compact&bg_color=0f0f1a00&text_color=6b6b8a&title_color=6c63ff&hide_border=true"
+            alt="Top Languages" style="width: 100%; height: auto;" />
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-title">Currently Exploring</div>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 12px;">
+            <li style="font-size: 0.78rem; color: var(--muted); display: flex; gap: 8px;"><span style="color: var(--accent3);">→</span> Agentic Workflows</li>
+            <li style="font-size: 0.78rem; color: var(--muted); display: flex; gap: 8px;"><span style="color: var(--accent3);">→</span> Advanced RAG & Vector DBs</li>
+            <li style="font-size: 0.78rem; color: var(--muted); display: flex; gap: 8px;"><span style="color: var(--accent3);">→</span> MLOps & Local LLMs</li>
+          </ul>
         </div>
       </div>
     </div>
