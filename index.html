@@ -583,20 +583,15 @@
       gap: 20px;
     }
 
-    @media (min-width: 1024px) {
+    @media (min-width: 768px) {
       .github-focus-grid {
-        grid-template-columns: 1.5fr 1fr;
+        grid-template-columns: 1fr 1fr;
+      }
+      /* Graph spans full width on desktop/tablet for a cleaner look */
+      .github-focus-grid > div:first-child {
+        grid-column: span 2;
       }
     }
-
-    /* Language Specific Colors */
-    .skill-tag.python:hover { --accent: #3776ab; border-color: #3776ab; color: #fff; background: rgba(55, 118, 171, 0.2); }
-    .skill-tag.sql:hover { --accent: #00758f; border-color: #00758f; color: #fff; background: rgba(0, 117, 143, 0.2); }
-    .skill-tag.javascript:hover { --accent: #f7df1e; border-color: #f7df1e; color: #000; background: rgba(247, 223, 30, 0.8); }
-    .skill-tag.cpp:hover { --accent: #00599c; border-color: #00599c; color: #fff; background: rgba(0, 89, 156, 0.2); }
-    .skill-tag.java:hover { --accent: #007396; border-color: #007396; color: #fff; background: rgba(0, 115, 150, 0.2); }
-    .skill-tag.php:hover { --accent: #777bb4; border-color: #777bb4; color: #fff; background: rgba(119, 123, 180, 0.2); }
-    .skill-tag.mysql:hover { --accent: #4479a1; border-color: #4479a1; color: #fff; background: rgba(68, 121, 161, 0.2); }
 
     @media (max-width: 480px) {
       .github-focus-grid {
@@ -1677,29 +1672,24 @@
                 src="https://github-readme-activity-graph.vercel.app/graph?username=abdullahks-devhub&bg_color=0f0f1a00&color=6c63ff&line=43e8d8&point=ff6584&area=true&hide_border=true&hide_title=true"
                 alt="GitHub Graph" style="width: 100%; height: auto; object-fit: contain; filter: brightness(1.2);" />
             </div>
-            
-            <div style="display: flex; flex-direction: column; gap: 20px;">
-              <div
-                style="background: rgba(19, 19, 31, 0.5); border: 1px solid var(--border); border-radius: 12px; padding: 16px; overflow: hidden;">
-                <img
-                  src="https://github-readme-stats.vercel.app/api?username=abdullahks-devhub&show_icons=true&bg_color=0f0f1a00&text_color=6b6b8a&icon_color=6c63ff&title_color=6c63ff&hide_border=true&hide_rank=true"
-                  alt="Impact Stats" style="width: 100%; height: auto;" />
-              </div>
-              <div
-                style="background: rgba(19, 19, 31, 0.5); border: 1px solid var(--border); border-radius: 12px; padding: 16px; overflow: hidden;">
-                <img
-                  src="https://github-readme-stats.vercel.app/api/top-langs/?username=abdullahks-devhub&layout=compact&bg_color=0f0f1a00&text_color=6b6b8a&title_color=6c63ff&hide_border=true"
-                  alt="Top Languages" style="width: 100%; height: auto;" />
-              </div>
-              <div
-                style="background: rgba(19, 19, 31, 0.5); border: 1px solid var(--border); border-radius: 12px; padding: 24px;">
-                <h4 style="color: var(--white); font-family: 'Syne', sans-serif; font-size: 1.1rem; margin-bottom: 12px;">
-                  Currently Exploring</h4>
-                <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
-                  <li style="font-size: 0.8rem; color: var(--muted); display: flex; gap: 8px;"><span
-                      style="color: var(--accent3);">→</span> Building Agentic Workflows</li>
-                </ul>
-              </div>
+            <div
+              style="background: rgba(19, 19, 31, 0.5); border: 1px solid var(--border); border-radius: 12px; padding: 16px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <img
+                src="https://github-readme-stats.vercel.app/api/top-langs/?username=abdullahks-devhub&layout=compact&bg_color=0f0f1a00&text_color=6b6b8a&title_color=6c63ff&hide_border=true"
+                alt="Top Languages" style="width: 100%; height: auto; object-fit: contain;" />
+            </div>
+            <div
+              style="background: rgba(19, 19, 31, 0.5); border: 1px solid var(--border); border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: center;">
+              <h4 style="color: var(--white); font-family: 'Syne', sans-serif; font-size: 1.1rem; margin-bottom: 12px;">
+                Currently Exploring</h4>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 12px;">
+                <li style="font-size: 0.8rem; color: var(--muted); display: flex; gap: 8px;"><span
+                    style="color: var(--accent3);">→</span> Building Agentic Workflows</li>
+                <li style="font-size: 0.8rem; color: var(--muted); display: flex; gap: 8px;"><span
+                    style="color: var(--accent3);">→</span> Advanced RAG with Vector DBs</li>
+                <li style="font-size: 0.8rem; color: var(--muted); display: flex; gap: 8px;"><span
+                    style="color: var(--accent3);">→</span> MLOps & Local LLM Deployments</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -1740,13 +1730,13 @@
       <div class="skill-category reveal">
         <div class="skill-cat-title">🐍 Languages & DBs</div>
         <div class="skill-tags">
-          <span class="skill-tag python">Python</span>
-          <span class="skill-tag sql">SQL</span>
-          <span class="skill-tag mysql">MySQL</span>
-          <span class="skill-tag javascript">JavaScript</span>
-          <span class="skill-tag cpp">C++</span>
-          <span class="skill-tag java">Java</span>
-          <span class="skill-tag php">PHP</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">C++</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">PHP</span>
         </div>
       </div>
 
