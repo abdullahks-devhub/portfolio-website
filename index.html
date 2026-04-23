@@ -94,7 +94,7 @@
       top: 0;
       left: 0;
       right: 0;
-      z-index: 100;
+      z-index: 103; /* must be above mobile-nav (101) so hamburger stays clickable */
       padding: 20px 60px;
       display: flex;
       justify-content: space-between;
@@ -102,6 +102,14 @@
       backdrop-filter: blur(20px);
       background: rgba(8, 8, 16, 0.8);
       border-bottom: 1px solid var(--border);
+    }
+
+    /* About profile photo block */
+    .about-profile {
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
     }
 
     .nav-logo {
@@ -1071,8 +1079,99 @@
       width: calc(100% - 120px);
     }
 
-    /* RESPONSIVE */
+    /* ─── Hamburger Button ─── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      z-index: 102;
+      position: relative;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .nav-hamburger.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-hamburger.open span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    .nav-hamburger.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* ─── Mobile Nav Drawer ─── */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(8, 8, 16, 0.97);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      z-index: 101;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+
+    .mobile-nav.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .mobile-nav a {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: -0.03em;
+      transition: color 0.25s;
+    }
+
+    .mobile-nav a:hover {
+      color: var(--white);
+    }
+
+    .mobile-nav .mobile-cta {
+      background: var(--accent);
+      color: var(--white) !important;
+      padding: 12px 36px;
+      border-radius: 6px;
+      font-size: 1.2rem;
+      margin-top: 8px;
+    }
+
+    /* ─── RESPONSIVE — Tablet (≤ 900px) ─── */
     @media (max-width: 900px) {
+      /* Disable custom cursor on touch/tablet */
+      .cursor,
+      .cursor-follower {
+        display: none;
+      }
+
+      body {
+        cursor: auto;
+      }
+
       nav {
         padding: 16px 24px;
       }
@@ -1081,11 +1180,19 @@
         display: none;
       }
 
+      .nav-hamburger {
+        display: flex;
+      }
+
+      .mobile-nav {
+        display: flex;
+      }
+
       .hero {
         padding: 100px 24px 80px;
       }
 
-      /* Fix invisible "Khan" text on mobile — stroke effect not supported */
+      /* Fix invisible "Khan" text on mobile */
       .hero-name .line2 {
         color: rgba(255, 255, 255, 0.5);
         -webkit-text-stroke: 0;
@@ -1109,13 +1216,35 @@
         gap: 40px;
       }
 
+      .contact-item-value {
+        word-break: break-all;
+        font-size: 0.75rem;
+      }
+
       .project-card {
         grid-template-columns: 1fr;
+        padding: 24px;
+        gap: 20px;
+      }
+
+      .project-card.featured {
+        padding: 24px;
       }
 
       .project-meta {
         flex-direction: row;
         align-items: center;
+      }
+
+      .edu-card {
+        flex-direction: column;
+        gap: 16px;
+        padding: 24px;
+        max-width: 100%;
+      }
+
+      .contact-cta {
+        padding: 32px 24px;
       }
 
       footer {
@@ -1128,6 +1257,94 @@
       .divider {
         margin: 0 24px;
         width: calc(100% - 48px);
+      }
+    }
+
+    /* ─── RESPONSIVE — Small Mobile (≤ 480px) ─── */
+    @media (max-width: 480px) {
+      nav {
+        padding: 14px 20px;
+      }
+
+      /* Stack headshot and name vertically on very small screens */
+      .about-profile {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      /* Hide scroll indicator on mobile — saves vertical space */
+      .hero-scroll {
+        display: none;
+      }
+
+      .hero {
+        padding: 86px 20px 60px;
+      }
+
+      .hero-badge {
+        font-size: 0.62rem;
+        padding: 5px 12px;
+        margin-bottom: 24px;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+      }
+
+      .hero-ctas a {
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      section {
+        padding: 60px 20px;
+      }
+
+      .section-title {
+        margin-bottom: 36px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .certs-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        padding: 20px;
+      }
+
+      .project-name {
+        font-size: 1.2rem;
+      }
+
+      .social-link {
+        padding: 8px 14px;
+        font-size: 0.7rem;
+      }
+
+      .about-links {
+        gap: 10px;
+      }
+
+      .github-focus-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mobile-nav a {
+        font-size: 1.6rem;
+      }
+
+      footer {
+        padding: 24px 20px;
+      }
+
+      .contact-cta h3 {
+        font-size: 1.4rem;
       }
     }
 
@@ -1212,7 +1429,21 @@
       <li><a href="#certifications">Certs</a></li>
       <li><a href="#contact" class="nav-cta">Hire Me</a></li>
     </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false" style="touch-action: manipulation;">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </nav>
+
+  <!-- MOBILE NAV DRAWER -->
+  <div class="mobile-nav" id="mobileNav" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+    <a href="#about" class="mobile-nav-link">About</a>
+    <a href="#skills" class="mobile-nav-link">Skills</a>
+    <a href="#projects" class="mobile-nav-link">Projects</a>
+    <a href="#certifications" class="mobile-nav-link">Certs</a>
+    <a href="#contact" class="mobile-cta mobile-nav-link">Hire Me</a>
+  </div>
 
   <!-- HERO -->
   <section class="hero" id="home">
@@ -1301,7 +1532,7 @@
 
     <div class="about-grid">
       <div class="about-text reveal">
-        <div style="margin-bottom: 32px; display: flex; align-items: center; gap: 24px;">
+        <div class="about-profile">
           <img src="images/original_headshot.png" alt="Abdullah Khan"
             style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent); filter: drop-shadow(0 0 15px rgba(108,99,255,0.3));" />
           <div>
@@ -1724,27 +1955,52 @@
   </footer>
 
   <script>
-    // Custom cursor
+    // ── Hamburger / Mobile Nav ──
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+
+    function toggleMenu(open) {
+      hamburger.classList.toggle('open', open);
+      mobileNav.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', open);
+      mobileNav.setAttribute('aria-hidden', !open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.contains('open');
+      toggleMenu(!isOpen);
+    });
+
+    // Close mobile nav when a link is clicked
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => toggleMenu(false));
+    });
+
+    // ── Custom cursor (desktop / mouse only) ──
+    const isTouchDevice = window.matchMedia('(hover: none)').matches;
     const cursor = document.getElementById('cursor');
     const follower = document.getElementById('cursorFollower');
     let mouseX = 0, mouseY = 0;
     let followerX = 0, followerY = 0;
 
-    document.addEventListener('mousemove', e => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      cursor.style.left = mouseX - 6 + 'px';
-      cursor.style.top = mouseY - 6 + 'px';
-    });
+    if (!isTouchDevice) {
+      document.addEventListener('mousemove', e => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursor.style.left = mouseX - 6 + 'px';
+        cursor.style.top = mouseY - 6 + 'px';
+      });
 
-    function animateFollower() {
-      followerX += (mouseX - followerX - 18) * 0.12;
-      followerY += (mouseY - followerY - 18) * 0.12;
-      follower.style.left = followerX + 'px';
-      follower.style.top = followerY + 'px';
-      requestAnimationFrame(animateFollower);
+      function animateFollower() {
+        followerX += (mouseX - followerX - 18) * 0.12;
+        followerY += (mouseY - followerY - 18) * 0.12;
+        follower.style.left = followerX + 'px';
+        follower.style.top = followerY + 'px';
+        requestAnimationFrame(animateFollower);
+      }
+      animateFollower();
     }
-    animateFollower();
 
     // Hover effects on interactive elements
     document.querySelectorAll('a, button, .skill-tag, .project-card').forEach(el => {
