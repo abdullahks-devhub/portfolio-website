@@ -583,6 +583,35 @@
       gap: 20px;
     }
 
+    /* Custom Language Bar */
+    .lang-bar {
+      display: flex;
+      height: 8px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 16px 0;
+      background: rgba(255, 255, 255, 0.05);
+    }
+    .lang-progress { height: 100%; transition: width 1s ease-in-out; }
+    
+    .lang-legend {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .lang-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .lang-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
     @media (max-width: 480px) {
       .github-focus-grid {
         gap: 16px;
@@ -1689,11 +1718,25 @@
             Gradio</div>
         </div>
         
-        <div class="info-card" style="padding: 16px;">
-          <div class="info-card-title" style="margin-bottom: 12px; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent);">Top Languages</div>
-          <img
-            src="https://github-readme-stats.vercel.app/api/top-langs/?username=abdullahks-devhub&layout=compact&bg_color=0f0f1a00&text_color=6b6b8a&title_color=6c63ff&hide_border=true"
-            alt="Top Languages" style="width: 100%; height: auto;" />
+        <div class="info-card" style="padding: 24px; max-width: 380px;">
+          <div class="info-card-title" style="margin-bottom: 2px; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent);">Top Languages</div>
+          
+          <div class="lang-bar">
+            <div class="lang-progress" style="width: 52.6%; background: #F37626;" title="Jupyter Notebook"></div>
+            <div class="lang-progress" style="width: 34.8%; background: #3178C6;" title="TypeScript"></div>
+            <div class="lang-progress" style="width: 7.1%; background: #E34F26;" title="HTML"></div>
+            <div class="lang-progress" style="width: 4.3%; background: #FFE873;" title="Python"></div>
+            <div class="lang-progress" style="width: 1.2%; background: #663399;" title="Other"></div>
+          </div>
+
+          <div class="lang-legend">
+            <div class="lang-item"><span class="lang-dot" style="background: #F37626;"></span> Jupyter <span style="opacity: 0.5; font-size: 0.65rem;">52.6%</span></div>
+            <div class="lang-item"><span class="lang-dot" style="background: #3178C6;"></span> TypeScript <span style="opacity: 0.5; font-size: 0.65rem;">34.8%</span></div>
+            <div class="lang-item"><span class="lang-dot" style="background: #E34F26;"></span> HTML <span style="opacity: 0.5; font-size: 0.65rem;">7.1%</span></div>
+            <div class="lang-item"><span class="lang-dot" style="background: #FFE873;"></span> Python <span style="opacity: 0.5; font-size: 0.65rem;">4.3%</span></div>
+            <div class="lang-item"><span class="lang-dot" style="background: #663399;"></span> CSS <span style="opacity: 0.5; font-size: 0.65rem;">0.8%</span></div>
+            <div class="lang-item"><span class="lang-dot" style="background: #F7DF1E;"></span> JS <span style="opacity: 0.5; font-size: 0.65rem;">0.2%</span></div>
+          </div>
         </div>
 
         <div class="info-card">
