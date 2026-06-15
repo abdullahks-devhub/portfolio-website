@@ -915,6 +915,9 @@
       transition: all 0.3s;
       position: relative;
       overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: block;
     }
 
     .cert-card::after {
@@ -1581,7 +1584,7 @@
       </p>
       <div class="hero-ctas">
         <a href="#projects" class="btn-primary">View Projects →</a>
-        <a href="./Abdullah_Khan_Resume_MLEngineer.pdf" target="_blank" class="btn-outline">Download Resume</a>
+        <a href="./Abdullah_Khan_AI_Engineer_Resume.pdf" target="_blank" class="btn-outline">Download Resume</a>
         <a href="mailto:abdullahkhansherwani09@gmail.com" class="btn-outline">Get In Touch</a>
       </div>
     </div>
@@ -1877,120 +1880,193 @@
 
     <div class="projects-grid">
 
-      <!-- Project 1 - Featured -->
-      <div class="project-card featured reveal">
-        <div>
-          <div class="project-header">
+      <!-- Project 1 - UniMind -->
+      <details class="project-card featured reveal" name="projects" open>
+        <summary class="project-summary">
+          <div class="project-summary-content">
             <span class="project-num">01</span>
+            <h3 class="project-name">🎓 UniMind — RAG University Study Assistant</h3>
             <span class="project-featured-badge">⭐ Featured</span>
-            <span class="project-status">Live</span>
           </div>
-          <h3 class="project-name">💎 Diamond Price Prediction — MLOps Pipeline</h3>
-          <p class="project-desc">
-            A production-grade MLOps system for predicting diamond prices. Features a modular pipeline architecture with
-            separate components for data ingestion, transformation, and model training — tracked via MLflow with a
-            FastAPI inference endpoint and Gradio frontend.
-          </p>
-          <ul class="project-highlights">
-            <li>End-to-end MLOps pipeline: ingestion → transformation → training → deployment</li>
-            <li>MLflow experiment tracking comparing Linear Regression, Random Forest, Gradient Boosting & XGBoost</li>
-            <li>FastAPI REST endpoint with Pydantic v2 input validation for real-time inference</li>
-            <li>Modular component architecture following software engineering best practices</li>
-            <li>Gradio frontend with structured 4C diamond grading reference guide</li>
-          </ul>
-          <div class="project-tech">
-            <span class="tech-pill">Python</span>
-            <span class="tech-pill">FastAPI</span>
-            <span class="tech-pill">MLflow</span>
-            <span class="tech-pill">Gradio</span>
-            <span class="tech-pill">Scikit-learn</span>
-            <span class="tech-pill">XGBoost</span>
-            <span class="tech-pill">Pydantic</span>
-            <span class="tech-pill">Pandas</span>
-          </div>
-          <div class="project-links">
-            <a href="https://huggingface.co/spaces/AbdullahKS-Devhub/diamond-price-prediction" target="_blank"
-              class="project-link live">🚀 Live
-              Demo</a>
-            <a href="https://github.com/abdullahks-devhub/diamond-price-prediction-with-mlops-pipeline" target="_blank"
-              class="project-link code">{ } GitHub</a>
+          <div class="accordion-icon"></div>
+        </summary>
+        <div class="project-content">
+          <div>
+            <div class="project-header">
+              <span class="project-status">Live</span>
+            </div>
+            <p class="project-desc">
+              Ask questions about your university notes using AI. Features Additive Vector Indexing, Smart Multi-Format OCR, and Resilient LLM Routing.
+            </p>
+            <ul class="project-highlights">
+              <li>Additive PDF Ingestion with Smart Multi-Format OCR (PyMuPDF & Tesseract)</li>
+              <li>Resilient LLM Routing with fallback mechanisms (gpt-oss-120b & Qwen2.5-72B)</li>
+              <li>Stateless Session History & Premium Claude-Style UI with LaTeX Support</li>
+            </ul>
+            <div class="project-tech">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">Streamlit</span>
+              <span class="tech-pill">LangChain</span>
+              <span class="tech-pill">ChromaDB</span>
+              <span class="tech-pill">HuggingFace</span>
+            </div>
+            <div class="project-links">
+              <a href="https://huggingface.co/spaces/AbdullahKS-Devhub/unimind-rag-chatbot" target="_blank" class="project-link live">🚀 Live Demo</a>
+              <a href="https://github.com/abdullahks-devhub/rag-chatbot-university" target="_blank" class="project-link code">{ } GitHub</a>
+            </div>
           </div>
         </div>
-      </div>
+      </details>
 
-      <!-- Project 2 -->
-      <div class="project-card reveal">
-        <div>
-          <div class="project-header">
+      <!-- Project 2 - Fraud Detection -->
+      <details class="project-card reveal" name="projects">
+        <summary class="project-summary">
+          <div class="project-summary-content">
             <span class="project-num">02</span>
-            <span class="project-status">Live</span>
+            <h3 class="project-name">🛡️ Fraud Detection System</h3>
           </div>
-          <h3 class="project-name">🎬 CineMatch — Movie Recommendation System</h3>
-          <p class="project-desc">
-            Content-based recommendation engine using cosine similarity across 5,000+ movies. Features real-time poster
-            fetching via TMDB API and a Netflix-inspired dark UI.
-          </p>
-          <ul class="project-highlights">
-            <li>CountVectorizer feature extraction on genres, cast, keywords & overviews</li>
-            <li>TMDB REST API integration for live posters & release years using movie IDs</li>
-            <li>Cached model inference with st.cache_resource for fast cold starts</li>
-          </ul>
-          <div class="project-tech">
-            <span class="tech-pill">Python</span>
-            <span class="tech-pill">Scikit-learn</span>
-            <span class="tech-pill">Streamlit</span>
-            <span class="tech-pill">TMDB API</span>
-            <span class="tech-pill">Pickle</span>
-            <span class="tech-pill">Git LFS</span>
-          </div>
-          <div class="project-links">
-            <a href="https://huggingface.co/spaces/AbdullahKS-Devhub/movie-recommender" target="_blank"
-              class="project-link live">🚀 Live Demo</a>
-            <a href="https://github.com/abdullahks-devhub/movie-recommendation-system" target="_blank"
-              class="project-link code">{ } GitHub</a>
+          <div class="accordion-icon"></div>
+        </summary>
+        <div class="project-content">
+          <div>
+            <div class="project-header">
+              <span class="project-status">Live</span>
+            </div>
+            <p class="project-desc">
+              A real-time, event-driven fraud prevention MLOps system processing streaming transactions with Apache Kafka, FastAPI, and Gradio.
+            </p>
+            <ul class="project-highlights">
+              <li>End-to-End MLOps pipeline from data ingestion to model training</li>
+              <li>Event-driven architecture streaming transactions via Apache Kafka</li>
+              <li>Dual API interfaces: FastAPI for developers and Gradio for UI testing</li>
+              <li>Experiment tracking via MLflow for model metrics (ROC-AUC)</li>
+            </ul>
+            <div class="project-tech">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">Kafka</span>
+              <span class="tech-pill">FastAPI</span>
+              <span class="tech-pill">Gradio</span>
+              <span class="tech-pill">Docker</span>
+              <span class="tech-pill">MLflow</span>
+              <span class="tech-pill">Scikit-Learn</span>
+            </div>
+            <div class="project-links">
+              <a href="https://huggingface.co/spaces/AbdullahKS-Devhub/fraud-detection-system" target="_blank" class="project-link live">🚀 Live Demo</a>
+              <a href="https://github.com/abdullahks-devhub/fraud-detection-mlops-system" target="_blank" class="project-link code">{ } GitHub</a>
+            </div>
           </div>
         </div>
-        <div class="project-meta">
-          <div class="project-emoji">🎬</div>
-        </div>
-      </div>
+      </details>
 
-      <!-- Project 3 -->
-      <div class="project-card reveal">
-        <div>
-          <div class="project-header">
+      <!-- Project 3 - Diamond Price Prediction -->
+      <details class="project-card reveal" name="projects">
+        <summary class="project-summary">
+          <div class="project-summary-content">
             <span class="project-num">03</span>
-            <span class="project-status">Live</span>
+            <h3 class="project-name">💎 Diamond Price Prediction</h3>
           </div>
-          <h3 class="project-name">🏥 HealthGuard AI — Multiple Disease Predictor</h3>
-          <p class="project-desc">
-            Three independent ML models predicting Diabetes, Heart Disease, and Parkinson's Disease from clinical data —
-            unified in a single professional Streamlit interface.
-          </p>
-          <ul class="project-highlights">
-            <li>3 separate SVM/Logistic Regression models with dedicated StandardScalers</li>
-            <li>1,266 patient records spanning 8–22 clinical features per disease</li>
-            <li>Color-coded results with responsible AI disclaimers throughout</li>
-          </ul>
-          <div class="project-tech">
-            <span class="tech-pill">Python</span>
-            <span class="tech-pill">Scikit-learn</span>
-            <span class="tech-pill">Streamlit</span>
-            <span class="tech-pill">NumPy</span>
-            <span class="tech-pill">UCI Datasets</span>
-            <span class="tech-pill">Pickle</span>
-          </div>
-          <div class="project-links">
-            <a href="https://huggingface.co/spaces/AbdullahKS-Devhub/health-assistant" target="_blank"
-              class="project-link live">🚀 Live Demo</a>
-            <a href="https://github.com/abdullahks-devhub/Multiple-Disease-Prediction-System" target="_blank"
-              class="project-link code">{ } GitHub</a>
+          <div class="accordion-icon"></div>
+        </summary>
+        <div class="project-content">
+          <div>
+            <div class="project-header">
+              <span class="project-status">Live</span>
+            </div>
+            <p class="project-desc">
+              A production-grade MLOps system for predicting diamond prices with a modular pipeline tracked via MLflow.
+            </p>
+            <ul class="project-highlights">
+              <li>End-to-end MLOps pipeline: ingestion → transformation → training → deployment</li>
+              <li>MLflow experiment tracking comparing multiple regression models</li>
+              <li>FastAPI REST endpoint with Pydantic v2 input validation</li>
+              <li>Gradio frontend with structured 4C diamond grading reference guide</li>
+            </ul>
+            <div class="project-tech">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">FastAPI</span>
+              <span class="tech-pill">MLflow</span>
+              <span class="tech-pill">Gradio</span>
+              <span class="tech-pill">XGBoost</span>
+            </div>
+            <div class="project-links">
+              <a href="https://huggingface.co/spaces/AbdullahKS-Devhub/diamond-price-prediction" target="_blank" class="project-link live">🚀 Live Demo</a>
+              <a href="https://github.com/abdullahks-devhub/diamond-price-prediction-with-mlops-pipeline" target="_blank" class="project-link code">{ } GitHub</a>
+            </div>
           </div>
         </div>
-        <div class="project-meta">
-          <div class="project-emoji">🏥</div>
+      </details>
+
+      <!-- Project 4 - CineMatch -->
+      <details class="project-card reveal" name="projects">
+        <summary class="project-summary">
+          <div class="project-summary-content">
+            <span class="project-num">04</span>
+            <h3 class="project-name">🎬 CineMatch</h3>
+          </div>
+          <div class="accordion-icon"></div>
+        </summary>
+        <div class="project-content">
+          <div>
+            <div class="project-header">
+              <span class="project-status">Live</span>
+            </div>
+            <p class="project-desc">
+              Content-based recommendation engine using cosine similarity across 5,000+ movies with real-time posters.
+            </p>
+            <ul class="project-highlights">
+              <li>CountVectorizer feature extraction on genres, cast, keywords & overviews</li>
+              <li>TMDB REST API integration for live posters & release years using movie IDs</li>
+              <li>Cached model inference with st.cache_resource for fast cold starts</li>
+            </ul>
+            <div class="project-tech">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">Scikit-learn</span>
+              <span class="tech-pill">Streamlit</span>
+              <span class="tech-pill">TMDB API</span>
+            </div>
+            <div class="project-links">
+              <a href="https://huggingface.co/spaces/AbdullahKS-Devhub/movie-recommender" target="_blank" class="project-link live">🚀 Live Demo</a>
+              <a href="https://github.com/abdullahks-devhub/movie-recommendation-system" target="_blank" class="project-link code">{ } GitHub</a>
+            </div>
+          </div>
         </div>
-      </div>
+      </details>
+
+      <!-- Project 5 - HealthGuard AI -->
+      <details class="project-card reveal" name="projects">
+        <summary class="project-summary">
+          <div class="project-summary-content">
+            <span class="project-num">05</span>
+            <h3 class="project-name">🏥 HealthGuard AI</h3>
+          </div>
+          <div class="accordion-icon"></div>
+        </summary>
+        <div class="project-content">
+          <div>
+            <div class="project-header">
+              <span class="project-status">Live</span>
+            </div>
+            <p class="project-desc">
+              Three independent ML models predicting Diabetes, Heart Disease, and Parkinson's Disease.
+            </p>
+            <ul class="project-highlights">
+              <li>3 separate SVM/Logistic Regression models with dedicated StandardScalers</li>
+              <li>1,266 patient records spanning 8–22 clinical features per disease</li>
+              <li>Color-coded results with responsible AI disclaimers throughout</li>
+            </ul>
+            <div class="project-tech">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">Scikit-learn</span>
+              <span class="tech-pill">Streamlit</span>
+              <span class="tech-pill">NumPy</span>
+            </div>
+            <div class="project-links">
+              <a href="https://huggingface.co/spaces/AbdullahKS-Devhub/health-assistant" target="_blank" class="project-link live">🚀 Live Demo</a>
+              <a href="https://github.com/abdullahks-devhub/Multiple-Disease-Prediction-System" target="_blank" class="project-link code">{ } GitHub</a>
+            </div>
+          </div>
+        </div>
+      </details>
 
     </div>
   </section>
@@ -2001,31 +2077,31 @@
     <h2 class="section-title reveal">Certifications</h2>
 
     <div class="certs-grid">
-      <div class="cert-card reveal">
+      <a href="images/certificates/ibm_rag.pdf" target="_blank" class="cert-card reveal">
         <div class="cert-icon">🤖</div>
         <div class="cert-issuer">IBM</div>
         <div class="cert-name">IBM RAG and Agentic AI Specialization</div>
-      </div>
-      <div class="cert-card reveal">
+      </a>
+      <a href="images/certificates/ibm_generative_ai.pdf" target="_blank" class="cert-card reveal">
         <div class="cert-icon">✨</div>
         <div class="cert-issuer">IBM</div>
         <div class="cert-name">Generative AI for Data Scientists Specialization</div>
-      </div>
-      <div class="cert-card reveal">
+      </a>
+      <a href="images/certificates/dl_specialization.pdf" target="_blank" class="cert-card reveal">
         <div class="cert-icon">🧠</div>
         <div class="cert-issuer">DeepLearning.AI</div>
         <div class="cert-name">Deep Learning Specialization</div>
-      </div>
-      <div class="cert-card reveal">
+      </a>
+      <a href="images/certificates/ml_specialization.pdf" target="_blank" class="cert-card reveal">
         <div class="cert-icon">📊</div>
         <div class="cert-issuer">DeepLearning.AI</div>
         <div class="cert-name">Machine Learning Specialization</div>
-      </div>
-      <div class="cert-card reveal">
+      </a>
+      <a href="images/certificates/python_everybody.pdf" target="_blank" class="cert-card reveal">
         <div class="cert-icon">🐍</div>
         <div class="cert-issuer">University of Michigan</div>
         <div class="cert-name">Python for Everybody Specialization</div>
-      </div>
+      </a>
     </div>
 
     <!-- Education -->
