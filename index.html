@@ -1377,29 +1377,58 @@
 
     /* FOOTER */
     footer {
-      padding: 60px 60px;
+      padding: 60px 60px 0;
       border-top: 1px solid var(--border);
+    }
+
+    .footer-top {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       gap: 40px;
+      padding-bottom: 40px;
     }
 
     .footer-left {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      align-items: flex-start;
+      gap: 14px;
     }
 
     .footer-tagline {
       font-size: 0.72rem;
       color: var(--muted);
       font-family: 'DM Mono', monospace;
+      max-width: 320px;
+      line-height: 1.6;
     }
 
     footer p {
       font-size: 0.78rem;
       color: var(--white);
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 12px;
+    }
+
+    .footer-socials a {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s;
+    }
+
+    .footer-socials a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
     }
 
     .footer-nav {
@@ -1417,6 +1446,39 @@
     }
 
     .footer-nav a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-copyright {
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .footer-privacy-note {
+      font-size: 0.7rem;
+      color: var(--muted);
+      max-width: 560px;
+      line-height: 1.6;
+    }
+
+    .footer-privacy-note a {
+      color: var(--muted);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color 0.25s;
+    }
+
+    .footer-privacy-note a:hover {
       color: var(--accent);
     }
 
@@ -1658,15 +1720,28 @@
       }
 
       footer {
+        padding: 40px 24px 0;
+      }
+
+      .footer-top {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 40px 24px;
         gap: 24px;
+      }
+
+      .footer-left {
+        align-items: center;
       }
 
       .footer-nav {
         justify-content: center;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
       }
 
       .divider {
@@ -1772,7 +1847,7 @@
       }
 
       footer {
-        padding: 24px 20px;
+        padding: 24px 20px 0;
       }
 
       .contact-cta h3 {
@@ -2554,11 +2629,25 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-left">
-      <p>© 2026 Abdullah Khan</p>
-      <p class="footer-tagline">AI/ML Engineer specializing in agentic AI, RAG systems, and MLOps.</p>
-    </div>
-    <div class="footer-right">
+    <div class="footer-top">
+      <div class="footer-left">
+        <a href="#" class="nav-logo">AK<span>.</span></a>
+        <p class="footer-tagline">AI/ML Engineer specializing in agentic AI, RAG systems, and MLOps.</p>
+        <div class="footer-socials">
+          <a href="https://linkedin.com/in/abdullahks-devhub" target="_blank" aria-label="LinkedIn">
+            <svg class="icon" width="15" height="15"><use href="#i-linkedin"/></svg>
+          </a>
+          <a href="https://github.com/abdullahks-devhub" target="_blank" aria-label="GitHub">
+            <svg class="icon" width="15" height="15"><use href="#i-github"/></svg>
+          </a>
+          <a href="https://huggingface.co/spaces/AbdullahKS-Devhub" target="_blank" aria-label="HuggingFace">
+            <svg class="icon" width="15" height="15"><use href="#i-hf"/></svg>
+          </a>
+          <a href="mailto:abdullahkhansherwani09@gmail.com" aria-label="Email">
+            <svg class="icon" width="15" height="15"><use href="#i-mail"/></svg>
+          </a>
+        </div>
+      </div>
       <ul class="footer-nav">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
@@ -2567,6 +2656,13 @@
         <li><a href="#certifications">Certs</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2026 Abdullah Khan. All rights reserved.</p>
+      <p class="footer-privacy-note">
+        This site uses Formspree to deliver contact form messages and privacy-friendly Vercel Analytics
+        for anonymous traffic stats — no data is sold or shared. <a href="privacy.html">Privacy</a>
+      </p>
     </div>
   </footer>
 
