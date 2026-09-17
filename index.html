@@ -125,6 +125,12 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       transition: color 0.3s;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .nav-links a:not(.nav-cta) {
+      padding: 12px 2px;
     }
 
     .nav-links a:hover {
@@ -134,7 +140,7 @@
     .nav-cta {
       background: var(--accent);
       color: var(--on-accent) !important;
-      padding: 8px 20px;
+      padding: 12px 20px;
       border-radius: 4px;
       transition: opacity 0.3s !important;
       font-weight: 500;
@@ -160,10 +166,10 @@
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
       background-size: 60px 60px;
-      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
+      mask-image: radial-gradient(ellipse 70% 70% at 50% 45%, black 10%, transparent 100%);
     }
 
     .hero-content {
@@ -222,8 +228,7 @@
     }
 
     .hero-name .line1 {
-      color: transparent;
-      -webkit-text-stroke: 0.8px rgba(255, 255, 255, 0.5);
+      color: var(--white);
       letter-spacing: 0.02em;
     }
 
@@ -900,12 +905,27 @@
       }
     }
 
+    .project-toggle {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: 16px;
+      flex-shrink: 0;
+    }
+
+    .project-toggle-label {
+      font-size: 0.65rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
     .accordion-icon {
       width: 14px;
       height: 14px;
       position: relative;
       flex-shrink: 0;
-      margin-left: 16px;
     }
 
     .accordion-icon::before,
@@ -1415,8 +1435,8 @@
     }
 
     .footer-socials a {
-      width: 34px;
-      height: 34px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       border: 1px solid var(--border);
       color: var(--muted);
@@ -1434,15 +1454,17 @@
     .footer-nav {
       list-style: none;
       display: flex;
-      gap: 24px;
+      gap: 8px;
       flex-wrap: wrap;
     }
 
     .footer-nav a {
       color: var(--muted);
       text-decoration: none;
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       transition: color 0.3s;
+      display: inline-block;
+      padding: 10px 8px;
     }
 
     .footer-nav a:hover {
@@ -1528,11 +1550,15 @@
     .nav-hamburger {
       display: none;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
       gap: 5px;
       background: none;
       border: none;
       cursor: pointer;
-      padding: 6px;
+      width: 44px;
+      height: 44px;
+      padding: 0;
       z-index: 102;
       position: relative;
     }
@@ -1893,6 +1919,7 @@
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <defs>
       <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12"/><polyline points="7 11 12 16 17 11"/><path d="M4 19h16"/></symbol>
       <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="2" y1="12" x2="22" y2="12"/></symbol>
       <symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M21 10c0 6.5-9 12-9 12s-9-5.5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
       <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></symbol>
@@ -1947,6 +1974,7 @@
     <a href="#contact" class="mobile-cta mobile-nav-link">Hire Me</a>
   </div>
 
+  <main>
   <!-- HERO -->
   <section class="hero" id="home">
     <div class="hero-grid"></div>
@@ -1959,14 +1987,12 @@
         </h1>
         <p class="hero-title">AI/ML Engineer <span class="cursor-char">_</span></p>
         <p class="hero-desc">
-          I build agentic AI, RAG systems, and production MLOps pipelines. Currently an AI Engineer at
-          CR Equity AI shipping LLM-powered CRM agents and voice systems — looking for my next role
-          as an Associate/Junior AI-ML Engineer.
+          Shipping agentic AI, RAG, and voice systems in production — currently building CRM
+          agents at CR Equity AI.
         </p>
         <div class="hero-ctas">
-          <a href="#projects" class="btn-primary">View Projects →</a>
-          <a href="./Abdullah_Khan_AI_Engineer_Resume.pdf" target="_blank" class="btn-outline">Download Resume</a>
-          <a href="mailto:abdullahkhansherwani09@gmail.com" class="btn-outline">Get In Touch</a>
+          <a href="#contact" class="btn-primary">Get In Touch →</a>
+          <a href="#projects" class="btn-outline">View Projects</a>
         </div>
 
         <div class="hero-stats-row">
@@ -2028,17 +2054,17 @@
           </div>
         </div>
         <p>
-          I'm <strong>Abdullah Khan</strong>, an AI/ML Engineer specializing in <strong>agentic AI, RAG
-          architectures, and production LLM &amp; voice systems</strong>, with 6+ shipped projects handling real
-          user traffic. I hold a BSc in Computer Science from The University of Faisalabad, CGPA
-          <strong>3.59/4.0</strong>.
+          I'm <strong>Abdullah Khan</strong>, an AI/ML Engineer with 1+ year of experience specializing in
+          <strong>agentic AI, RAG architectures, and production LLM &amp; voice systems</strong>, with 6+ shipped
+          projects handling real user traffic. I hold a BSc in Computer Science from The University of
+          Faisalabad, CGPA <strong>3.59/4.0</strong>.
         </p>
         <p>
           At <strong>CR Equity AI</strong>, I've built and deployed 10 of 25 sub-agents for a CRM AI Assistant
           platform as FastAPI microservices on AWS, and I'm currently building two Twilio/ElevenLabs
-          conversational voice agents. Earlier, I shipped a real-time <strong>Fraud Detection System</strong>
-          (Kafka, FastAPI, MLflow) and <strong>UniMind</strong>, a multi-format OCR and agentic RAG assistant
-          built on LangChain and ChromaDB.
+          conversational voice agents. Before that, as an Associate AI Engineer at <strong>Xelent
+          Solutions</strong>, I designed production multi-agent systems with LangGraph and FastAPI, including a
+          multi-agent document editor and an automated code-generation pipeline.
         </p>
         <p>
           I'm certified by <strong>DeepLearning.AI (Stanford) and IBM</strong> in deep learning, agentic AI
@@ -2061,6 +2087,10 @@
           <a href="mailto:abdullahkhansherwani09@gmail.com" class="social-link">
             <svg class="icon" width="14" height="14"><use href="#i-mail"/></svg>
             Email Me
+          </a>
+          <a href="./Abdullah_Khan_AI_Engineer_Resume.pdf" target="_blank" class="social-link">
+            <svg class="icon" width="14" height="14"><use href="#i-download"/></svg>
+            Resume
           </a>
         </div>
 
@@ -2118,17 +2148,17 @@
 
           <div class="lang-legend" style="margin-top: 16px;">
             <div class="lang-item"><span class="lang-dot" style="background: #F37626;"></span> Jupyter <span
-                style="opacity: 0.5; font-size: 0.65rem;">52%</span></div>
+                style="font-size: 0.65rem; color: var(--muted);">52%</span></div>
             <div class="lang-item"><span class="lang-dot" style="background: #3178C6;"></span> TypeScript <span
-                style="opacity: 0.5; font-size: 0.65rem;">34%</span></div>
+                style="font-size: 0.65rem; color: var(--muted);">34%</span></div>
             <div class="lang-item"><span class="lang-dot" style="background: #E34F26;"></span> HTML <span
-                style="opacity: 0.5; font-size: 0.65rem;">7%</span></div>
+                style="font-size: 0.65rem; color: var(--muted);">7%</span></div>
             <div class="lang-item"><span class="lang-dot" style="background: #FFE873;"></span> Python <span
-                style="opacity: 0.5; font-size: 0.65rem;">4%</span></div>
+                style="font-size: 0.65rem; color: var(--muted);">4%</span></div>
             <div class="lang-item"><span class="lang-dot" style="background: #663399;"></span> CSS <span
-                style="opacity: 0.5; font-size: 0.65rem;">1%</span></div>
+                style="font-size: 0.65rem; color: var(--muted);">1%</span></div>
             <div class="lang-item"><span class="lang-dot" style="background: #F7DF1E;"></span> JS <span
-                style="opacity: 0.5; font-size: 0.65rem;">0%</span></div>
+                style="font-size: 0.65rem; color: var(--muted);">0%</span></div>
           </div>
         </div>
       </div>
@@ -2142,16 +2172,29 @@
 
     <div class="timeline">
       <div class="timeline-item reveal">
-        <div class="timeline-period">Jul 2026 — Present</div>
+        <div class="timeline-period">Jun 2026 — Present</div>
         <div>
           <div class="timeline-role">AI Engineer &amp; Platform Agent Development Engineer</div>
           <div class="timeline-org">CR Equity AI, Inc. · Remote (Tallahassee, FL / Alexandria, VA HQ)</div>
           <ul class="timeline-points">
-            <li>Built and deployed <strong>10 of 25 sub-agents</strong> for the platform's CRM AI Assistant from scratch — including Dynamic Pricing, Compliance &amp; Monitoring, and Performance Analytics — as FastAPI microservices on AWS, backed by PostgreSQL, Redis, and Apache Kafka.</li>
-            <li>Built RAG pipelines and semantic search over real estate and loan data on the proprietary AIVAA™ platform, integrating <strong>ChromaDB, Pinecone, and FAISS</strong> for valuation comparables and borrower profiling.</li>
+            <li>Built and deployed <strong>10 of 25 sub-agents</strong> for the platform's CRM AI Assistant from scratch — including Dynamic Pricing, Compliance &amp; Monitoring, and Performance Analytics — as FastAPI microservices on AWS, backed by NeonDB, Redis, and Apache Kafka.</li>
+            <li>Automated ingestion and extraction of appraisals, rent rolls, and DSCR packages with LLM-powered document workflows, tuning prompt strategies across <strong>OpenAI, Claude, and open-source models</strong>.</li>
             <li>Rebuilt a Zoho SalesIQ chatbot's conversation flow and RAG pipeline to fix context retention across turns; that same knowledge base now also powers two in-development voice agents.</li>
-            <li>Currently building two conversational voice agents (<strong>Twilio Programmable Voice, ElevenLabs Conversational AI</strong>) — a technical-support agent and a broker-facing sales agent — with FastAPI orchestration and Redis-backed session state.</li>
-            <li>Architected multi-agent orchestration (<strong>LangGraph, LangChain, CrewAI, AutoGen</strong>) to automate loan pre-qualification, underwriting routing, and exception flagging.</li>
+            <li>Currently building two conversational voice agents (<strong>Twilio Programmable Voice, ElevenLabs Conversational AI</strong>) — a technical-support agent and a broker-facing sales agent — with FastAPI orchestration.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-period">Sep 2025 — Jun 2026</div>
+        <div>
+          <div class="timeline-role">Associate AI Engineer</div>
+          <div class="timeline-org">Xelent Solutions · Faisalabad, Pakistan — On-site</div>
+          <ul class="timeline-points">
+            <li>Designed and delivered production agentic AI systems using <strong>LangGraph and FastAPI</strong> — multi-agent architectures with supervisor routing, parallel specialist agents, and planner-based orchestration beyond simple chatbot workflows.</li>
+            <li>Built a multi-agent document editor (LangGraph, FastAPI, WebSocket streaming) with specialized writer, editor, and diagram agents, and an automated code-generation pipeline that turns a one-line idea into a complete, GitHub-pushed Python project.</li>
+            <li>Integrated LLM APIs across <strong>OpenAI, Anthropic, and Groq</strong>, translating client requirements into scalable, production-ready systems.</li>
+            <li>Prototyped early agentic workflows in LangChain/LangGraph that became the foundation for the team's later multi-agent architecture.</li>
           </ul>
         </div>
       </div>
@@ -2160,7 +2203,7 @@
         <div class="timeline-period">Jun 2025 — Aug 2025</div>
         <div>
           <div class="timeline-role">iOS Developer Intern</div>
-          <div class="timeline-org">Tricode · Faisalabad, Pakistan — On-site</div>
+          <div class="timeline-org">Tricode LLC · Faisalabad, Pakistan — On-site</div>
           <ul class="timeline-points">
             <li>Developed and maintained iOS application features and UI components alongside the core development team.</li>
             <li>Implemented, tested, and debugged application functionality, gaining hands-on experience with mobile development workflows and version control.</li>
@@ -2244,10 +2287,7 @@
         <div class="skill-cat-title"><svg class="icon" width="16" height="16"><use href="#i-cloud"/></svg> Cloud &amp; Infrastructure</div>
         <div class="skill-tags">
           <span class="skill-tag">AWS (EC2, S3, IAM)</span>
-          <span class="skill-tag">GCP</span>
-          <span class="skill-tag">Azure</span>
-          <span class="skill-tag">PostgreSQL (NeonDB)</span>
-          <span class="skill-tag">Fernet Encryption</span>
+          <span class="skill-tag">NeonDB</span>
         </div>
       </div>
 
@@ -2279,7 +2319,10 @@
             <h3 class="project-name"><svg class="icon" width="20" height="20"><use href="#i-shield"/></svg> OneScan — AI-Powered Multi-Cloud Security Scanner</h3>
             <span class="project-featured-badge">Featured</span>
           </div>
-          <div class="accordion-icon"></div>
+          <div class="project-toggle">
+            <span class="project-toggle-label">Details</span>
+            <div class="accordion-icon"></div>
+          </div>
         </summary>
         <div class="project-content">
           <div>
@@ -2319,7 +2362,10 @@
             <span class="project-num">02</span>
             <h3 class="project-name"><svg class="icon" width="20" height="20"><use href="#i-graduation"/></svg> UniMind — RAG University Study Assistant</h3>
           </div>
-          <div class="accordion-icon"></div>
+          <div class="project-toggle">
+            <span class="project-toggle-label">Details</span>
+            <div class="accordion-icon"></div>
+          </div>
         </summary>
         <div class="project-content">
           <div>
@@ -2357,7 +2403,10 @@
             <span class="project-num">03</span>
             <h3 class="project-name"><svg class="icon" width="20" height="20"><use href="#i-bar-chart"/></svg> Fraud Detection MLOps System</h3>
           </div>
-          <div class="accordion-icon"></div>
+          <div class="project-toggle">
+            <span class="project-toggle-label">Details</span>
+            <div class="accordion-icon"></div>
+          </div>
         </summary>
         <div class="project-content">
           <div>
@@ -2398,7 +2447,10 @@
             <span class="project-num">04</span>
             <h3 class="project-name"><svg class="icon" width="20" height="20"><use href="#i-gem"/></svg> Diamond Price Prediction</h3>
           </div>
-          <div class="accordion-icon"></div>
+          <div class="project-toggle">
+            <span class="project-toggle-label">Details</span>
+            <div class="accordion-icon"></div>
+          </div>
         </summary>
         <div class="project-content">
           <div>
@@ -2436,7 +2488,10 @@
             <span class="project-num">05</span>
             <h3 class="project-name"><svg class="icon" width="20" height="20"><use href="#i-film"/></svg> CineMatch</h3>
           </div>
-          <div class="accordion-icon"></div>
+          <div class="project-toggle">
+            <span class="project-toggle-label">Details</span>
+            <div class="accordion-icon"></div>
+          </div>
         </summary>
         <div class="project-content">
           <div>
@@ -2472,7 +2527,10 @@
             <span class="project-num">06</span>
             <h3 class="project-name"><svg class="icon" width="20" height="20"><use href="#i-heart-pulse"/></svg> HealthGuard AI</h3>
           </div>
-          <div class="accordion-icon"></div>
+          <div class="project-toggle">
+            <span class="project-toggle-label">Details</span>
+            <div class="accordion-icon"></div>
+          </div>
         </summary>
         <div class="project-content">
           <div>
@@ -2550,7 +2608,7 @@
         <div>
           <div class="edu-degree">Bachelor of Science in Computer Science</div>
           <div class="edu-school">The University of Faisalabad · Punjab, Pakistan</div>
-          <div class="edu-details">Completed June 2026 · Degree Conferral September 2026</div>
+          <div class="edu-details">Completed June 2026 · Degree Conferral November 2026</div>
           <div class="cgpa">CGPA: 3.59 / 4.0</div>
         </div>
       </div>
@@ -2626,6 +2684,7 @@
   </a>
 
   <div class="toast" id="toast">Email Copied! 🚀</div>
+  </main>
 
   <!-- FOOTER -->
   <footer>
